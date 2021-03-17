@@ -4,6 +4,7 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="t96X4O" name="complex-numbers">
     <GROUP id="{9EB94B3D-291F-1999-BD4E-E14CAA5AB86A}" name="Source">
+      <FILE id="vDS5Da" name="Circle.h" compile="0" resource="0" file="Source/Circle.h"/>
       <FILE id="E9bgQU" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="hAfpm1" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="spzQz2" name="MainComponent.cpp" compile="1" resource="0"
@@ -23,6 +24,7 @@
         <MODULEPATH id="juce_events" path="../../../Documents/JUCE/modules"/>
         <MODULEPATH id="juce_graphics" path="../../../Documents/JUCE/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../../../Documents/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../Documents/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>
@@ -32,6 +34,7 @@
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>
     <OSX/>
