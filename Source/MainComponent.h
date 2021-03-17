@@ -36,6 +36,7 @@ private:
     float prevy;
     float angle;
     float frequency;
+    float radius;
     int sampleRate;
     
     std::deque<float> wave;

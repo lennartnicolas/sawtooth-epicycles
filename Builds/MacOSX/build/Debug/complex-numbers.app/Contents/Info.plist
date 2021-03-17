@@ -5,13 +5,13 @@
 	<key>BuildMachineOSBuild</key>
 	<string>19G2021</string>
 	<key>CFBundleDisplayName</key>
-	<string>complex-numbers</string>
+	<string>sawtooth-epicycles</string>
 	<key>CFBundleExecutable</key>
 	<string>complex-numbers</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.complexnumbers</string>
+	<string>com.yourcompany.sawtoothepicycles</string>
 	<key>CFBundleName</key>
-	<string>complex-numbers</string>
+	<string>sawtooth-epicycles</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

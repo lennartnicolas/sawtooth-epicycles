@@ -34,7 +34,7 @@ MainComponent::MainComponent()
     radius = 75;
     circleNumber = 10;
     updateCircleNumber(circleNumber);
-
+ 
 }
 
 MainComponent::~MainComponent()
@@ -47,14 +47,19 @@ void MainComponent::update()
     y = origin.y;
     
     for(int i = 0; i < circleNumber; i++){
+        
         prevx = x;
         prevy = y;
-        float n = i * 2 + 1;
-        angle = (float) getFrameCounter() / sampleRate * juce::MathConstants<float>::twoPi * frequency;
-        float r = radius * (4 / (n * juce::MathConstants<float>::pi));
-        x += r * std::cos(n * angle);
-        y += r * std::sin(n * angle);
-        circleAreas[i].setSize(r * 2, r * 2);
+        angle = -1 * (float) getFrameCounter() / sampleRate * juce::MathConstants<float>::twoPi * frequency;
+        
+        int n = i + 1;
+        if (n % 2 != 0) {n = -n;}
+        
+        float r = (radius * 4) / ((float)n * juce::MathConstants<float>::pi);
+        x += r * std::cos((i + 1) * angle);
+        y += r * std::sin((i + 1)* angle);
+        
+        circleAreas[i].setSize(std::abs(r * 2), std::abs(r * 2));
         circleAreas[i].setCentre(prevx, prevy);
         circleLines[i].setStart(prevx, prevy);
         circleLines[i].setEnd(x, y);
@@ -65,7 +70,7 @@ void MainComponent::update()
     if(wave.size() >= getWidth()/2) wave.pop_back();
 }
 
-//==============================================================================llllll
+//==============================================================================
 void MainComponent::paint (juce::Graphics& g)
 {
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
@@ -85,13 +90,15 @@ void MainComponent::paint (juce::Graphics& g)
         g.drawLine(midPoint.x + i - 1, wave[i - 1], midPoint.x + i, wave[i]);
     
     g.drawLine(x, y, midPoint.x, y);
+    g.setColour(juce::Colours::yellow);
+    g.drawLine(origin.x, origin.y, circleLines[circleLines.size()-1].getEnd().getX(), circleLines[circleLines.size()-1].getEnd().getY(), 3.f);
     
 }
 
 void MainComponent::resized()
 {
-    circleSlider.setBounds(getWidth()/4 - 100, getHeight() - getHeight()/4, 200, 30);
-    freqSlider.setBounds(getWidth()/4 - 100, getHeight() - getHeight()/4 + 30, 200, 30);
+    circleSlider.setBounds(getWidth()/4 - 100, getHeight() - getHeight()/4 + 30, 200, 30);
+    freqSlider.setBounds(getWidth()/4 - 100, getHeight() - getHeight()/4 + 60, 200, 30);
 }
 
 juce::Rectangle<float> MainComponent::getAreaForCircle(float radius, const juce::Point<float>& position)

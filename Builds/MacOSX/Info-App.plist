@@ -8,11 +8,11 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.complexnumbers</string>
+    <string>com.yourcompany.sawtoothepicycles</string>
     <key>CFBundleName</key>
-    <string>complex-numbers</string>
+    <string>sawtooth-epicycles</string>
     <key>CFBundleDisplayName</key>
-    <string>complex-numbers</string>
+    <string>sawtooth-epicycles</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleSignature</key>
